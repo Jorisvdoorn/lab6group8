@@ -1,7 +1,7 @@
 
 dynamic_knapsack = function(x, W){
   
-  stopifnot(is.data.frame(x), length(colnames(x)) == 2, colnames(x) == c("w", "v"))
+  stopifnot(is.data.frame(x), length(colnames(x)) == 2, colnames(x) == c("w", "v"), W>=0)
   
   # create a placeholder matrix of possible values
   n_items = nrow(x)+1
