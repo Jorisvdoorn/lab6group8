@@ -1,3 +1,13 @@
+#' Dynamic Knapsack
+#' 
+#' Return the maximum value given the capacity of knapsack by using dynamic programming.
+#' @usage dynamic_knapsack(x, W)
+#' @param x A \code{data.frame} consisting of two variables. \code{w} represents the object's weight and \code{v} is the value.
+#' @param W the maximum capacity of the knapsack.
+#' @return A \code{list} containing the maximum value and the elements.
+#' @references \url{en.wikipedia.org/wiki/Knapsack_problem}
+#' @name dynamic_knapsack
+#' @export
 
 dynamic_knapsack = function(x, W){
   
