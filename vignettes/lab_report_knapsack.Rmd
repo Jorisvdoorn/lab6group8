@@ -82,3 +82,14 @@ knapsack_objects <- data.frame(
 
 system.time(greedy_knapsack(x = knapsack_objects, W = 3500))
 ```
+
+
+## Parallelize brute_force_knapsack
+**Question:** What performance gain could you get by parallelizing brute force search?  
+The performance gained by parallelizing `brute_force_knapsack` is not significant when `x` has small number of rows (e.g., 8). However, when `x` has sufficiently large number of rows, (e.g., 22), the performance gain by parallelizing starts to show.
+
+```{r, eval=FALSE}
+system.time(brute_force_knapsack(knapsack_objects[1:22,], W = 3500))
+system.time(brute_force_knapsack(knapsack_objects[1:22,], W = 3500, parallel = TRUE))
+```
+The estimated running time of the first line is about 52 seconds while the second line is about 34 seconds.
