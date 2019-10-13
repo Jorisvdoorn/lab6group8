@@ -1,6 +1,6 @@
 #' Brute Force Knapsack
 #' 
-#' Return the maximum value given the capacity of knapsack by looking through every possible alternatives.
+#' Returns the maximum value given the capacity of knapsack by looking through every possible alternatives.
 #' @usage brute_force_knapsack(x, W, parallel = FALSE)
 #' @param x A \code{data.frame} consisting of two variables. \code{w} represents the object's weight and \code{v} is the value.
 #' @param W the maximum capacity of the knapsack.

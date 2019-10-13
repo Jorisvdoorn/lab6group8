@@ -1,0 +1,86 @@
+---
+title: "Knapsack Problem"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lab_report_knapsack}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(lab6group8)
+library(microbenchmark)
+library(lineprof)
+```
+## Introduction
+The knapsack problem or rucksack problem is a problem in combinatorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
+
+This package contains 3 different algorithms to solve the knapsack problem:  
+1. `brute_force_knapsack`  
+2. `dynamic_knapsack`  
+3. `greedy_knapsack`  
+
+The inputs of the function are:  
+`x`: A `data.frame` consisting of two variables. `w` represents the object's weight and `v` is the value.  
+`W`: the maximum capacity of the knapsack.  
+In the `brute_force_knapsack`, there's one additional argument `parallel` that's set to `FALSE` by default. If `TRUE`, the function is parallelized over detected cores.  
+
+We generate the data to run examples as below:
+```{r}
+suppressWarnings(RNGversion("3.5.9"))
+set.seed(42)
+n <- 2000
+knapsack_objects <- data.frame(
+  w=sample(1:4000, size = n, replace = TRUE),
+  v=runif(n = n, 0, 10000)
+)
+```
+
+## brute_force_knapsack
+This function returns the maximum value given the capacity of knapsack by looking through every possible alternatives.  
+**example:**
+```{r}
+brute_force_knapsack(x = knapsack_objects[1:8,], W = 3500)
+```
+**Question:** How much time does it takes to run the algorithm for n = 16 objects?
+```{r}
+system.time(brute_force_knapsack(x = knapsack_objects[1:16, ], W = 3500))
+```
+
+
+## dynamic_knapsack
+This function returns the maximum value given the capacity of knapsack by using dynamic programming.
+**example:**
+```{r}
+dynamic_knapsack(x = knapsack_objects[1:8,], W = 3500)
+```
+**Question:** How much time does it takes to run the algorithm for n = 500 objects?
+```{r}
+system.time(dynamic_knapsack(x = knapsack_objects[1:500,], W = 3500))
+```
+
+
+## greedy_knapsack
+This function returns the maximum value given the capacity of knapsack by sorting the items in decreasing order of value per unit of weight.
+**example:**
+```{r}
+greedy_knapsack(x = knapsack_objects[1:800,], W = 3500)
+```
+**Question:** How much time does it takes to run the algorithm for n = 1000000 objects?
+```{r}
+set.seed(42)
+n <- 1000000
+knapsack_objects <- data.frame(
+  w=sample(1:4000, size = n, replace = TRUE),
+  v=runif(n = n, 0, 10000)
+)
+
+system.time(greedy_knapsack(x = knapsack_objects, W = 3500))
+```

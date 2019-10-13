@@ -1,6 +1,6 @@
 #' Greedy Knapsack
 #' 
-#' Return the maximum value given the capacity of knapsack by sorting the items in decreasing order of value per unit of weight.
+#' Returns the maximum value given the capacity of knapsack by sorting the items in decreasing order of value per unit of weight.
 #' @usage greedy_knapsack(x, W)
 #' @param x A \code{data.frame} consisting of two variables. \code{w} represents the object's weight and \code{v} is the value.
 #' @param W the maximum capacity of the knapsack.
