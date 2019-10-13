@@ -22,7 +22,7 @@ The knapsack problem or rucksack problem is a problem in combinatorial optimizat
 
 This package contains 3 different algorithms to solve the knapsack problem:  
 1. `brute_force_knapsack`  
-2. `dynamic_knapsack`  
+2. `knapsack_dynamic`  
 3. `greedy_knapsack`  
 
 The inputs of the function are:  
@@ -53,15 +53,15 @@ system.time(brute_force_knapsack(x = knapsack_objects[1:16, ], W = 3500))
 ```
 
 
-## dynamic_knapsack
+## knapsack_dynamic
 This function returns the maximum value given the capacity of knapsack by using dynamic programming.
 **example:**
 ```{r}
-dynamic_knapsack(x = knapsack_objects[1:8,], W = 3500)
+knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500)
 ```
 **Question:** How much time does it takes to run the algorithm for n = 500 objects?
 ```{r}
-system.time(dynamic_knapsack(x = knapsack_objects[1:500,], W = 3500))
+system.time(knapsack_dynamic(x = knapsack_objects[1:500,], W = 3500))
 ```
 
 

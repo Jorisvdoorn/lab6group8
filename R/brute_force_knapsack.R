@@ -8,6 +8,7 @@
 #' @return A \code{list} containing the maximum value and the elements.
 #' @references \url{en.wikipedia.org/wiki/Knapsack_problem}
 #' @name brute_force_knapsack
+#' @importFrom utils combn
 #' @import parallel
 #' @export
 

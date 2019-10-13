@@ -1,15 +1,15 @@
-#' Dynamic Knapsack
+#' Knapsack Dynamic
 #' 
 #' Returns the maximum value given the capacity of knapsack by using dynamic programming.
-#' @usage dynamic_knapsack(x, W)
+#' @usage knapsack_dynamic(x, W)
 #' @param x A \code{data.frame} consisting of two variables. \code{w} represents the object's weight and \code{v} is the value.
 #' @param W the maximum capacity of the knapsack.
 #' @return A \code{list} containing the maximum value and the elements.
 #' @references \url{en.wikipedia.org/wiki/Knapsack_problem}
-#' @name dynamic_knapsack
+#' @name knapsack_dynamic
 #' @export
 
-dynamic_knapsack = function(x, W){
+knapsack_dynamic = function(x, W){
   
   stopifnot(is.data.frame(x), length(colnames(x)) == 2, colnames(x) == c("w", "v"), W>=0)
   

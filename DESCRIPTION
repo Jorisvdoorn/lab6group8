@@ -4,7 +4,7 @@ Title: Knapsack Problem
 Version: 1.0
 Date: 2019-10-11
 Authors@R: c(person("Bayu Beta", "Brahmantio", email = "bayubrahmantio@gmail.com", role = c("aut", "cre")), person("Joris", "van Doorn", email = "joris.v.doorn@gmail.com", role = "aut"))
-Description: This package contains 3 different algorithms of knapsack problem
+Description: This package contains 3 different algorithms of knapsack problem.
 License: CC0
 Encoding: UTF-8
 Imports: 
