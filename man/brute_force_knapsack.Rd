@@ -17,7 +17,7 @@ brute_force_knapsack(x, W, parallel = FALSE)
 A \code{list} containing the maximum value and the elements.
 }
 \description{
-Return the maximum value given the capacity of knapsack by looking through every possible alternatives.
+Returns the maximum value given the capacity of knapsack by looking through every possible alternatives.
 }
 \references{
 \url{en.wikipedia.org/wiki/Knapsack_problem}

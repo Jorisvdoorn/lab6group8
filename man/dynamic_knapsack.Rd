@@ -15,7 +15,7 @@ dynamic_knapsack(x, W)
 A \code{list} containing the maximum value and the elements.
 }
 \description{
-Return the maximum value given the capacity of knapsack by using dynamic programming.
+Returns the maximum value given the capacity of knapsack by using dynamic programming.
 }
 \references{
 \url{en.wikipedia.org/wiki/Knapsack_problem}
